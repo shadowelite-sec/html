@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        color: #c9f;
+        background-color: #0b0f10;
+        border: 5px dashed #ffffff;
+        border-radius: 10px;
+      }
+      input,
+      textarea,
+      select,
+      input[type="radio"] {
+        color: #ffffff;
+        border: 1px solid #8dffa3;
+        background-color: #0b0f10;
+      }
+      table[id="2"] {
+        color: #ffa700;
+        font-style: italic;
+      }
+      input[id="button"] {
+        color: black;
+        background-color: #8affa4;
+        border: 1px solid red;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDENT REGISTRATION</title>
+  </head>
+  <body style="font-family: Hack" bgcolor="#0b0f10">
+    <h1 style="color: #ff294b; text-decoration: underline" align="center">
+      STUDENT REGISTRATION FORM
+    </h1>
+    <form>
+      <table align="center" width="40%" cellpadding="4" cellspacing="2">
+        <tr>
+          <td>First Name</td>
+          <td><input type="text" name="fname" id="fname" size="30" /></td>
+        </tr>
+        <tr>
+          <td>Middle Name</td>
+          <td><input type="text" name="mname" id="mname" size="30" /></td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td><input type="text" name="lname" id="lname" size="30" /></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>
+            <textarea name="address" id="address" rows="2" cols="25"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Pin</td>
+          <td><input type="number" id="pin" name="pin" size="8" /></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="email" name="mail" id="mail" size="30" /></td>
+        </tr>
+        <tr>
+          <td>Mobile No</td>
+          <td><input type="number" id="mnum" name="mnum" size="30" /></td>
+        </tr>
+        <tr>
+          <td>Sex</td>
+          <td>
+            <input
+              type="radio"
+              name="sex"
+              id="sex"
+              size="10"
+              value="Male"
+            />Male
+            <input
+              type="radio"
+              name="sex"
+              id="sex"
+              size="10"
+              value="Female"
+            />Female
+          </td>
+        </tr>
+
+        <tr>
+          <td>Course</td>
+          <td>
+            <select name="course" id="course">
+              <option value="" selected>Select</option>
+              <option value="BCA">BCA</option>
+              <option value="B.Tech">B.Tech</option>
+              <option value="B.Sc">B.Sc</option>
+              <option value="MBA">MBA</option>
+              <option value="MCA">MCA</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="reset" id="button" /></td>
+          <td colspan="2">
+            <input
+              type="button"
+              id="button"
+              onclick="showInput();"
+              value="submit"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <h3 align="center" style="color: #57cefa; text-decoration: underline">
+      DISPLAY DATA
+    </h3>
+    <table
+      id="2"
+      cellspacing="0"
+      width="50%"
+      bgcolor="yellow"
+      align="center"
+      border="1"
+    >
+      <tr>
+        <td width="30%">Name of the Student:</td>
+        <td width="70%"><span id="studname"></span></td>
+      </tr>
+      <tr>
+        <td width="30%">Address:</td>
+        <td width="70%"><span id="addr"></span></td>
+      </tr>
+      <tr>
+        <td width="30%">Email Id:</td>
+        <td width="70%" id="email"></td>
+      </tr>
+      <tr>
+        <td width="30%">Mobile No:</td>
+        <td width="70%" id="mobile"></td>
+      </tr>
+      <tr>
+        <td width="30%">Sex:</td>
+        <td width="70%" id="sex1"></td>
+      </tr>
+      <tr>
+        <td width="30%">Course:</td>
+        <td width="70%" id="quali"></td>
+      </tr>
+    </table>
+    <script lang="javaScript">
+      function showInput() {
+       document.getElementById('studname').innerHTML = document.getElementById("fname").value + " " + document.getElementById("mname").value + " " + document.getElementById("lname").value;
+              document.getElementById('addr').innerHTML = document.getElementById("address").value + "," + document.getElementById("pin").value;
+              document.getElementById('email').innerHTML = document.getElementById("mail").value;
+              document.getElementById('mobile').innerHTML = document.getElementById("mnum").value;
+              document.getElementById('sex1').innerHTML = document.getElementById("sex").value;
+              document.getElementById('quali').innerHTML = document.getElementById("course").value;
+            }
+    </script>
+  </body>
+</html>
