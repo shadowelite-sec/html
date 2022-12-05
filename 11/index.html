@@ -71,14 +71,14 @@
             <input
               type="radio"
               name="sex"
-              id="sex"
+              id="msex"
               size="10"
               value="Male"
             />Male
             <input
               type="radio"
               name="sex"
-              id="sex"
+              id="fsex"
               size="10"
               value="Female"
             />Female
@@ -148,14 +148,21 @@
       </tr>
     </table>
     <script lang="javaScript">
-      function showInput() {
-       document.getElementById('studname').innerHTML = document.getElementById("fname").value + " " + document.getElementById("mname").value + " " + document.getElementById("lname").value;
-              document.getElementById('addr').innerHTML = document.getElementById("address").value + "," + document.getElementById("pin").value;
-              document.getElementById('email').innerHTML = document.getElementById("mail").value;
-              document.getElementById('mobile').innerHTML = document.getElementById("mnum").value;
-              document.getElementById('sex1').innerHTML = document.getElementById("sex").value;
-              document.getElementById('quali').innerHTML = document.getElementById("course").value;
-            }
+                      function showInput() {
+                       document.getElementById('studname').innerHTML = document.getElementById("fname").value + " " + document.getElementById("mname").value + " " + document.getElementById("lname").value;
+                              document.getElementById('addr').innerHTML = document.getElementById("address").value + "," + document.getElementById("pin").value;
+                              document.getElementById('email').innerHTML = document.getElementById("mail").value;
+                              document.getElementById('mobile').innerHTML = document.getElementById("mnum").value;
+                  let a = document.getElementById("msex").checked;
+                       console.log(a);
+                       if(document.getElementById('msex').checked){
+          document.getElementById('sex1').innerHTML = document.getElementById("msex").value;
+         } else
+      if(document.getElementById('fsex').checked){
+          document.getElementById('sex1').innerHTML = document.getElementById("fsex").value;
+         }
+                              document.getElementById('quali').innerHTML = document.getElementById("course").value;
+        }
     </script>
   </body>
 </html>
